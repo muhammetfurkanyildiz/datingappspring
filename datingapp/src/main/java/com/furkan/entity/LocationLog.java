@@ -2,8 +2,6 @@ package com.furkan.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -19,14 +17,16 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LocationLog extends BaseEntity {
 
+    @Column(name = "place_name")
+    String placeName;
+
     @Column(name = "latitude")
     private double latitude;
 
     @Column(name = "longitude")
     private double longitude;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @ManyToOne
     private UserAccount user;
 
 }

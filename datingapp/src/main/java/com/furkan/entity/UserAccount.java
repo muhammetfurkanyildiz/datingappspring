@@ -1,7 +1,6 @@
 package com.furkan.entity;
 
 import java.util.Date;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -22,7 +21,5 @@ public class UserAccount extends BaseEntity {
     private String lastName;
     private String gender;
     private Date birthOfDate;
-
-    private List<LocationLog> locations;
 
 }
